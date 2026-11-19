@@ -51,7 +51,7 @@ You need the extracted files of **Burnout 3: Takedown (Original Xbox)** containi
 *(Our smart `.bat` launchers automatically detect both paths!)*
 
 ### Step 3 — Install This Preset & Launcher Pack
-1. Download the latest zip from the [Releases](https://github.com/syahrulazz01/takedawn-lowend-preset/releases) page (or copy everything inside the `pack/` folder of this repository).
+1. Download the latest zip from the [Releases](https://github.com/syahrulazz01/burnout-takedown-port-pc/releases) page (or copy everything inside the `pack/` folder of this repository).
 2. Extract all files **directly into your Takedawn folder** (the same folder as `Takedawn.exe`).
 3. Your final folder layout should look like this:
    ```text

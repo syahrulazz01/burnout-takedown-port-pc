@@ -51,7 +51,7 @@ Anda membutuhkan folder hasil ekstrak game **Burnout 3: Takedown (Original Xbox)
 *(Launcher `.bat` pintar di paket ini otomatis mendeteksi kedua lokasi tersebut!)*
 
 ### Langkah 3 — Pasang Paket Preset & Launcher Ini
-1. Download zip terbaru dari halaman [Releases](https://github.com/syahrulazz01/takedawn-lowend-preset/releases) (atau salin seluruh isi folder `pack/` dari repositori ini).
+1. Download zip terbaru dari halaman [Releases](https://github.com/syahrulazz01/burnout-takedown-port-pc/releases) (atau salin seluruh isi folder `pack/` dari repositori ini).
 2. Ekstrak semua file **langsung ke dalam folder Takedawn Anda** (satu folder dengan `Takedawn.exe`).
 
 ### Langkah 4 — Pilih Preset Sesuai Spek Laptop/PC
