@@ -1,0 +1,22 @@
+# Takedawn & Burnout 3: Takedown copyrighted binaries/assets (NEVER commit!)
+*.exe
+*.dll
+*.xbe
+*.iso
+*.xiso
+*.img
+Burnout 3 Takedown/
+data/Game/
+data/Saves/
+data/cache/
+data/shaders/
+
+# Generated shortcuts, logs, and build artifacts
+*.lnk
+*.log
+*.zip
+*.7z
+dist/
+desktop.ini
+Thumbs.db
+.DS_Store
