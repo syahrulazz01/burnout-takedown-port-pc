@@ -1,28 +1,25 @@
-# Burnout 3: Takedown — Takedawn Low-End / No-Vulkan 1.3 Preset & Launcher Pack
+# Burnout Takedown PORT PC — All-in-One Preset, Launcher & Setup Guide
 
 [![Platform](https://img.shields.io/badge/Platform-Windows%2010%2F11%20x64-0078D6?logo=windows&logoColor=white)](#)
 [![Target](https://img.shields.io/badge/Target-Takedawn%20v0.3.1-FF6B00)](#)
-[![Vulkan 1.3](https://img.shields.io/badge/Vulkan%201.3-Not%20Required%20(CPU%2FD3D11)-2EA44F)](#)
+[![PC Tiers](https://img.shields.io/badge/Presets-Low--End%20%7C%20Mid--Range%20%7C%20High--End-2EA44F)](#)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > **Language / Bahasa:** **English** | [Bahasa Indonesia](README.id.md)
 
-A lightweight, drop-in **Ultra-Low graphics preset and smart `.bat` launcher pack** for playing **Burnout 3: Takedown** via the [Takedawn](https://github.com/takedawn) PC port (`v0.3.1`) on **Intel Celeron, Pentium, and older integrated GPUs that do not support Vulkan 1.3**.
+An all-in-one **graphics preset pack, 1-click preset switcher, smart `.bat` launchers, and complete start-to-finish setup guide** for playing **Burnout 3: Takedown** natively on PC via **Takedawn (`v0.3.1`)** — tailored for **every PC class**, from **Intel Celeron laptops without Vulkan 1.3** up to **High-End Gaming PCs**.
 
 ---
 
-## Why This Pack Exists
+## Supported PC Tiers (3 Built-In Presets)
 
-By default, Takedawn requires a GPU with **Vulkan 1.3** support and enables higher-resolution rendering and post-processing effects. On budget or older laptops (e.g., Intel Celeron N-series, older Intel HD Graphics, legacy Windows 10 laptops), this causes:
-- Immediate startup failures or black screens due to missing **Vulkan 1.3** drivers.
-- Severe slow-motion gameplay when frame rates drop below 60 FPS.
-- Repeated setup wizard prompts when launching `Takedawn.exe` directly with custom game paths.
+Switch between tiers anytime in 2 seconds using **`0_Choose_Preset.bat`**:
 
-This pack solves all three out of the box:
-1. **Zero Vulkan 1.3 Required:** Uses Takedawn's built-in multi-threaded CPU rasterizer (`RECOMP_PB_BACKEND=cpu`) presented via **SDL Direct3D 11**.
-2. **Ultra-Low Hardware Preset:** Native `480p` (`1x` render scale), `nearest` filter, all post-processing (SMAA, bloom, motion blur, upscalers, HDR, softbody) disabled, and `sleep` frame pacing to reduce CPU thermals.
-3. **Anti-Slow-Motion (`race_clock = true`):** Decouples simulation pacing from frame drops so races stay responsive even below 60 FPS.
-4. **Smart Direct Launchers:** Auto-detects `Burnout 3 Takedown\default.xbe` or `data\Game\default.xbe` and skips the setup wizard (`--no-setup`), with optional **Unlock All / Cheats** launchers included.
+| Tier | Target Hardware | Renderer | Internal Scale | Key Features |
+| :--- | :--- | :--- | :--- | :--- |
+| **`1` Low-End** *(Default)* | Intel Celeron / Pentium / legacy iGPU (**No Vulkan 1.3**) | CPU Rasterizer + SDL D3D11 | `1x` (`480p`, `nearest`) | All effects OFF, `pacing = "sleep"`, `race_clock = true` (anti slow-motion) |
+| **`2` Mid-Range** | Standard laptops / GTX / RX / modern iGPU (**Vulkan 1.3**) | Vulkan 1.3 | `2x` (HD, `linear`) | Smooth 60 FPS, Softbody ON, Bloom ON, 60 FPS Crash & Split-Screen |
+| **`3` High-End** | Gaming PCs / RTX / high-refresh monitors (**Vulkan 1.3**) | Vulkan 1.3 | `3x` (1440p+, `linear`) | High Refresh Rate ON, Softbody ON, Bloom + Motion Blur, 60 FPS Crash & Split-Screen |
 
 ---
 
@@ -30,68 +27,77 @@ This pack solves all three out of the box:
 
 > [!IMPORTANT]
 > **This repository contains ZERO copyrighted game files and ZERO Takedawn binaries.**
-> It only provides open-source configuration files (`.toml`) and Windows batch launcher scripts (`.bat`).
+> It only provides open-source configuration presets (`.toml`), Windows batch launchers (`.bat`), and setup documentation.
 >
-> To use this pack, you must supply:
-> 1. The official **Takedawn v0.3.1** Windows build.
-> 2. Your own legally obtained copy of **Burnout 3: Takedown** (`default.xbe` + game assets).
+> To play, you must supply:
+> 1. The official **Takedawn v0.3.1** Windows x64 build.
+> 2. Your own legally obtained **Original Xbox** copy of **Burnout 3: Takedown** (`default.xbe` + game assets, or an Xbox `.iso` disc image).
 
 ---
 
-## What's Included
+## Complete Start-to-Finish Setup Tutorial
 
-| File | Purpose |
+### Step 1 — Get Official Takedawn (`v0.3.1`)
+1. Download the official **Takedawn v0.3.1** Windows x64 release and extract it to a clean folder (for example: `D:\Games\Burnout3_PC\`).
+2. Make sure `Takedawn.exe` is directly inside that folder.
+
+### Step 2 — Prepare Your Original Xbox Game Files
+You need the extracted files of **Burnout 3: Takedown (Original Xbox)** containing `default.xbe`:
+- **Option A (From an `.iso` / `.xiso` disc image):** Extract the ISO using `extract-xiso` (or run Takedawn's built-in setup once) so you get a folder containing `default.xbe`, `Tracks\`, `sound\`, etc.
+- **Option B (Already extracted folder):** Place the folder inside your Takedawn directory at either:
+  - `Burnout 3 Takedown\default.xbe`, **OR**
+  - `data\Game\default.xbe`
+
+*(Our smart `.bat` launchers automatically detect both paths!)*
+
+### Step 3 — Install This Preset & Launcher Pack
+1. Download the latest zip from the [Releases](https://github.com/syahrulazz01/takedawn-lowend-preset/releases) page (or copy everything inside the `pack/` folder of this repository).
+2. Extract all files **directly into your Takedawn folder** (the same folder as `Takedawn.exe`).
+3. Your final folder layout should look like this:
+   ```text
+   Burnout3_PC/
+   ├── Takedawn.exe
+   ├── 0_Choose_Preset.bat
+   ├── 1_Play_NoVulkan_Celeron.bat
+   ├── 2_Play_Vulkan_UltraLow.bat
+   ├── 3_Play_Cheat_UnlockAll_NoVulkan.bat
+   ├── 4_Play_Cheat_UnlockAll_Vulkan.bat
+   ├── Create_Shortcuts.bat
+   ├── enhance.toml
+   ├── presets/
+   │   ├── low-end/
+   │   ├── mid-range/
+   │   └── high-end/
+   ├── Burnout 3 Takedown/        (or data/Game/)
+   │   └── default.xbe
+   └── data/
+       └── settings.toml
+   ```
+
+### Step 4 — Choose Your Graphics Preset
+Double-click **`0_Choose_Preset.bat`** and pick your PC class:
+- Press **`1`** -> Low-End / Intel Celeron / No Vulkan 1.3
+- Press **`2`** -> Mid-Range (Vulkan 1.3, HD 60 FPS)
+- Press **`3`** -> High-End Gaming PC (Vulkan 1.3, 3x High Refresh)
+
+### Step 5 — Launch the Game!
+**Always launch via a `.bat` file** (do not double-click `Takedawn.exe` directly, so `--no-setup` and your chosen backend/cheats load automatically):
+
+| Launcher File | Best For |
 | :--- | :--- |
-| `enhance.toml` | Ultra-Low renderer & presentation config (`480p`, `scale = 1`, `nearest`, `pacing = "sleep"`). |
-| `data/settings.toml` | In-game Takedawn settings (all post-processing & upscalers OFF, `race_clock = true`). |
-| `1_Play_NoVulkan_Celeron.bat` | **Recommended for Celeron / No Vulkan 1.3.** Uses CPU rasterizer (`2` threads) + D3D11 present. |
-| `2_Play_Vulkan_UltraLow.bat` | For low-end GPUs that **do** support Vulkan 1.3 but need maximum FPS. |
-| `3_Play_Cheat_UnlockAll_NoVulkan.bat` | No-Vulkan mode with `RECOMP_DEBUG=cheats` and `BO3_UNLOCK_ALL=1` enabled. |
-| `4_Play_Cheat_UnlockAll_Vulkan.bat` | Vulkan Ultra-Low mode with `RECOMP_DEBUG=cheats` and `BO3_UNLOCK_ALL=1` enabled. |
-| `Create_Shortcuts.bat` | Optional helper that creates Windows `.lnk` shortcuts using the `Takedawn.exe` icon. |
-
----
-
-## Quick Start (Installation)
-
-1. **Download the latest release** from the [Releases](https://github.com/syahrulazz01/takedawn-lowend-preset/releases) page (or clone this repo and use the contents of `pack/`).
-2. **Extract** all files from `pack/` directly into your existing **Takedawn v0.3.1** folder (the same folder that contains `Takedawn.exe`).
-   - Your folder should look like this:
-     ```text
-     takedawn-0.3.1-win64/
-     ├── Takedawn.exe
-     ├── enhance.toml
-     ├── 1_Play_NoVulkan_Celeron.bat
-     ├── 2_Play_Vulkan_UltraLow.bat
-     ├── 3_Play_Cheat_UnlockAll_NoVulkan.bat
-     ├── 4_Play_Cheat_UnlockAll_Vulkan.bat
-     ├── Create_Shortcuts.bat
-     ├── Burnout 3 Takedown/        (or data/Game/)
-     │   └── default.xbe
-     └── data/
-         └── settings.toml
-     ```
-3. **Launch the game** using one of the `.bat` files (**do not** double-click `Takedawn.exe` directly):
-   - No Vulkan 1.3 -> **`1_Play_NoVulkan_Celeron.bat`**
-   - Has Vulkan 1.3 (Low-End) -> **`2_Play_Vulkan_UltraLow.bat`**
-   - Want everything unlocked + cheats -> **`3_Play_Cheat_UnlockAll_NoVulkan.bat`** or **`4_Play_Cheat_UnlockAll_Vulkan.bat`**
-4. *(Optional)* Run **`Create_Shortcuts.bat`** to generate clean desktop/folder shortcuts with the Burnout 3 icon.
+| `1_Play_NoVulkan_Celeron.bat` | PCs **without Vulkan 1.3** (Intel Celeron / legacy iGPU). Uses CPU rasterizer + D3D11. |
+| `2_Play_Vulkan_UltraLow.bat` | PCs **with Vulkan 1.3** (Low-End, Mid-Range, or High-End — uses whichever preset you picked in Step 4). |
+| `3_Play_Cheat_UnlockAll_NoVulkan.bat` | No-Vulkan mode + `RECOMP_DEBUG=cheats` + `BO3_UNLOCK_ALL=1`. |
+| `4_Play_Cheat_UnlockAll_Vulkan.bat` | Vulkan mode + `RECOMP_DEBUG=cheats` + `BO3_UNLOCK_ALL=1`. |
+| `Create_Shortcuts.bat` | *(Optional)* Creates Windows `.lnk` shortcuts with the official `Takedawn.exe` icon. |
 
 ---
 
 ## In-Game Controls & Tuning Tips
 
-- **Open Takedawn Overlay:** Press `F1` on keyboard (or `Back + Start` on controller) to adjust graphics, controls, or cheats in real time.
-- **CPU Thread Tuning:** The No-Vulkan launchers default to `RECOMP_RASTER_THREADS=2` (ideal for dual-core Intel Celeron CPUs). If you have a 4-core CPU without Vulkan 1.3, right-click the `.bat` file -> **Edit** and change it to `RECOMP_RASTER_THREADS=4` for better performance.
-- **Want Even Better FPS?** Check if your laptop's Intel/AMD GPU driver has an update that adds Vulkan 1.3 support, then switch to `2_Play_Vulkan_UltraLow.bat`.
-
----
-
-## Tested Environment
-
-- **OS:** Windows 10 (64-bit)
-- **Hardware:** Intel Celeron laptop (integrated graphics, no Vulkan 1.3 support)
-- **Takedawn Version:** `v0.3.1` ("Sing Along Forever")
+- **Open Takedawn Overlay:** Press `F1` on keyboard (or `Back + Start` on controller) to tweak resolution, AA, upscalers, controls, or cheats live in-game.
+- **CPU Thread Tuning (No-Vulkan Mode):** `1_Play_NoVulkan_Celeron.bat` defaults to `RECOMP_RASTER_THREADS=2` (ideal for 2-core Celerons). If you have a 4-core CPU without Vulkan 1.3, right-click the `.bat` file -> **Edit** and change `2` to `4`.
+- **High-End 4K Tweaks:** If you have a strong GPU (RTX / RX), press `F1` in-game to raise render scale to `4x` or enable SMAA / Texture Upscaling.
 
 ---
 
@@ -100,7 +106,7 @@ This pack solves all three out of the box:
 - **syahrulazz01** ([@syahrulazz01](https://github.com/syahrulazz01)) — Project Creator, Hardware Testing & Curation
 - **Antigravity (Google DeepMind)** — Co-Author, Technical Configuration & Automation Engineering
 
-Special thanks to the **Takedawn** developers and community for making *Burnout 3: Takedown* playable natively on PC.
+Special thanks to the **Takedawn** developers and community for bringing *Burnout 3: Takedown* natively to PC.
 
 ---
 

@@ -1,0 +1,20 @@
+# Burnout 3: Takedown (Takedawn v0.3.1) - HIGH-END In-Game Settings (Gaming PC)
+
+[graphics]
+render_scale = 3
+bloom = 1
+motion_blur = 1
+softbody = true
+high_refresh = true
+crash_60fps = true
+split_60fps = true
+hdr = false
+dither = true
+
+[display]
+filter = "linear"
+fullscreen = true
+ultrawide = "off"
+
+[game]
+race_clock = true

@@ -1,0 +1,15 @@
+# Burnout 3: Takedown (Takedawn v0.3.1) - MID-RANGE Preset (Vulkan 1.3 / Balanced HD)
+# 2x internal resolution, linear filter, smooth 60 FPS.
+
+[render]
+scale = 2
+shader_cache = true
+
+[display]
+widescreen = true
+hdtv = "480p"
+
+[present]
+filter = "linear"
+aspect = "auto"
+fullscreen = true

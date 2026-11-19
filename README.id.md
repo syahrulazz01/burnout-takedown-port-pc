@@ -1,28 +1,25 @@
-# Burnout 3: Takedown — Preset Ultra-Low & Launcher Pack (Celeron / Tanpa Vulkan 1.3)
+# Burnout Takedown PORT PC — Paket Preset All-in-One, Launcher & Tutorial Lengkap
 
 [![Platform](https://img.shields.io/badge/Platform-Windows%2010%2F11%20x64-0078D6?logo=windows&logoColor=white)](#)
 [![Target](https://img.shields.io/badge/Target-Takedawn%20v0.3.1-FF6B00)](#)
-[![Vulkan 1.3](https://img.shields.io/badge/Vulkan%201.3-Tidak%20Wajib%20(CPU%2FD3D11)-2EA44F)](#)
+[![PC Tiers](https://img.shields.io/badge/Presets-Low--End%20%7C%20Mid--Range%20%7C%20High--End-2EA44F)](#)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > **Language / Bahasa:** [English](README.md) | **Bahasa Indonesia**
 
-Paket konfigurasi **Ultra-Low** dan **launcher `.bat` pintar** siap pakai untuk menjalankan **Burnout 3: Takedown** lewat port PC **Takedawn v0.3.1** di laptop **Intel Celeron, Pentium, atau iGPU lama yang belum mendukung Vulkan 1.3**.
+Paket lengkap **preset grafis, pengubah preset 1-klik, launcher `.bat` pintar, dan tutorial instalasi dari awal sampai akhir** untuk memainkan **Burnout 3: Takedown** secara native di PC lewat **Takedawn (`v0.3.1`)** — mendukung **semua kelas PC**, mulai dari **laptop Intel Celeron tanpa Vulkan 1.3** hingga **PC Gaming kelas tinggi**.
 
 ---
 
-## Masalah yang Diselesaikan
+## 3 Pilihan Preset Grafis (Semua Kelas PC)
 
-Secara bawaan, Takedawn membutuhkan GPU dengan dukungan **Vulkan 1.3** serta mengaktifkan beberapa efek grafis modern. Di laptop spesifikasi rendah (seperti Intel Celeron / Windows 10 lama), hal ini sering menyebabkan:
-- Game gagal terbuka atau *black screen* karena tidak ada driver **Vulkan 1.3**.
-- Gameplay terasa *slow-motion* parah saat FPS turun di bawah 60.
-- Muncul layar setup/install berulang kali saat mengklik `Takedawn.exe` secara langsung.
+Ganti preset kapan saja dalam 2 detik lewat **`0_Choose_Preset.bat`**:
 
-Paket ini langsung mengatasi semuanya:
-1. **Tanpa Vulkan 1.3:** Menggunakan CPU rasterizer bawaan Takedawn (`RECOMP_PB_BACKEND=cpu`) yang ditampilkan lewat **SDL Direct3D 11**.
-2. **Settingan Grafis Paling Ringan:** Resolusi native `480p` (`scale = 1x`), filter `nearest`, seluruh efek berat (SMAA, bloom, motion blur, upscaler, HDR, softbody) dimatikan, dan frame pacing `sleep` agar CPU tetap dingin.
-3. **Anti Slow-Motion (`race_clock = true`):** Menjaga kecepatan balapan tetap normal walau FPS turun di bawah 60.
-4. **Launcher Otomatis:** Mendeteksi otomatis folder `Burnout 3 Takedown\default.xbe` atau `data\Game\default.xbe` lalu langsung masuk game (`--no-setup`), lengkap dengan opsi **Cheat Unlock All**.
+| Kelas PC | Target Perangkat | Renderer | Skala Resolusi | Fitur Utama |
+| :--- | :--- | :--- | :--- | :--- |
+| **`1` Low-End** *(Default)* | Intel Celeron / Pentium / iGPU lama (**Tanpa Vulkan 1.3**) | CPU Rasterizer + SDL D3D11 | `1x` (`480p`, `nearest`) | Semua efek berat OFF, `pacing = "sleep"`, `race_clock = true` (anti slow-motion) |
+| **`2` Mid-Range** | Laptop standar / GTX / RX / iGPU baru (**Vulkan 1.3**) | Vulkan 1.3 | `2x` (HD, `linear`) | 60 FPS stabil, Softbody ON, Bloom ON, Crash & Split-Screen 60 FPS |
+| **`3` High-End** | PC Gaming / RTX / monitor refresh rate tinggi (**Vulkan 1.3**) | Vulkan 1.3 | `3x` (1440p+, `linear`) | High Refresh Rate ON, Softbody ON, Bloom + Motion Blur, Crash & Split-Screen 60 FPS |
 
 ---
 
@@ -30,44 +27,57 @@ Paket ini langsung mengatasi semuanya:
 
 > [!IMPORTANT]
 > **Repositori ini TIDAK menyertakan file game Burnout 3: Takedown maupun binary Takedawn.**
-> Hanya berisi file konfigurasi open-source (`.toml`) dan skrip launcher (`.bat`).
+> Hanya berisi file preset konfigurasi open-source (`.toml`), skrip launcher (`.bat`), dan panduan instalasi.
 >
-> Untuk menggunakannya, Anda harus menyediakan sendiri:
-> 1. Build resmi **Takedawn v0.3.1** untuk Windows.
-> 2. Salinan legal game **Burnout 3: Takedown** (`default.xbe` beserta aset game).
+> Untuk bermain, Anda harus menyiapkan sendiri:
+> 1. Build resmi **Takedawn v0.3.1** untuk Windows 64-bit.
+> 2. Salinan legal game **Burnout 3: Takedown (Original Xbox)** milik Anda (`default.xbe` + aset game, atau file `.iso` Xbox).
 
 ---
 
-## Isi Paket
+## Tutorial Lengkap dari Awal Sampai Akhir
 
-| File | Fungsi |
+### Langkah 1 — Siapkan Takedawn (`v0.3.1`)
+1. Download rilis resmi **Takedawn v0.3.1** (Windows x64) lalu ekstrak ke satu folder bersih (contoh: `D:\Games\Burnout3_PC\`).
+2. Pastikan file `Takedawn.exe` ada langsung di dalam folder tersebut.
+
+### Langkah 2 — Siapkan File Game Burnout 3: Takedown (Original Xbox)
+Anda membutuhkan folder hasil ekstrak game **Burnout 3: Takedown (Original Xbox)** yang berisi `default.xbe`:
+- **Opsi A (Dari file `.iso` / `.xiso`):** Ekstrak file ISO menggunakan `extract-xiso` (atau jalankan setup bawaan Takedawn 1 kali) hingga mendapatkan folder berisi `default.xbe`, `Tracks\`, `sound\`, dll.
+- **Opsi B (Sudah berupa folder):** Letakkan foldernya di dalam folder Takedawn pada salah satu lokasi ini:
+  - `Burnout 3 Takedown\default.xbe`, **ATAU**
+  - `data\Game\default.xbe`
+
+*(Launcher `.bat` pintar di paket ini otomatis mendeteksi kedua lokasi tersebut!)*
+
+### Langkah 3 — Pasang Paket Preset & Launcher Ini
+1. Download zip terbaru dari halaman [Releases](https://github.com/syahrulazz01/takedawn-lowend-preset/releases) (atau salin seluruh isi folder `pack/` dari repositori ini).
+2. Ekstrak semua file **langsung ke dalam folder Takedawn Anda** (satu folder dengan `Takedawn.exe`).
+
+### Langkah 4 — Pilih Preset Sesuai Spek Laptop/PC
+Klik 2x **`0_Choose_Preset.bat`** lalu ketik angka sesuai spek PC kamu:
+- Ketik **`1`** -> Laptop Kentang / Intel Celeron / Tanpa Vulkan 1.3
+- Ketik **`2`** -> Laptop/PC Menengah (Vulkan 1.3, HD 60 FPS)
+- Ketik **`3`** -> PC Gaming Kelas Tinggi (Vulkan 1.3, 3x High Refresh)
+
+### Langkah 5 — Mulai Bermain!
+**Selalu jalankan game lewat file `.bat`** (jangan klik langsung `Takedawn.exe` agar otomatis masuk game tanpa layar setup):
+
+| File Launcher | Cocok Untuk |
 | :--- | :--- |
-| `enhance.toml` | Konfigurasi renderer & tampilan Ultra-Low (`480p`, `scale = 1`, `nearest`, `pacing = "sleep"`). |
-| `data/settings.toml` | Pengaturan in-game Takedawn (semua efek & upscaler OFF, `race_clock = true`). |
-| `1_Play_NoVulkan_Celeron.bat` | **Rekomendasi untuk Celeron / Tanpa Vulkan 1.3.** Menggunakan CPU rasterizer (`2` thread) + D3D11. |
-| `2_Play_Vulkan_UltraLow.bat` | Untuk laptop kentang yang **sudah** punya Vulkan 1.3 tapi butuh FPS maksimal. |
+| `1_Play_NoVulkan_Celeron.bat` | Laptop/PC **belum ada Vulkan 1.3** (Intel Celeron / iGPU lama). Memakai CPU rasterizer + D3D11. |
+| `2_Play_Vulkan_UltraLow.bat` | Laptop/PC **sudah ada Vulkan 1.3** (bisa untuk Low-End, Mid-Range, maupun High-End sesuai pilihan di Langkah 4). |
 | `3_Play_Cheat_UnlockAll_NoVulkan.bat` | Mode Tanpa Vulkan + `RECOMP_DEBUG=cheats` + `BO3_UNLOCK_ALL=1`. |
-| `4_Play_Cheat_UnlockAll_Vulkan.bat` | Mode Vulkan Ultra-Low + `RECOMP_DEBUG=cheats` + `BO3_UNLOCK_ALL=1`. |
-| `Create_Shortcuts.bat` | Opsional — membuat shortcut Windows (`.lnk`) berlogo `Takedawn.exe`. |
+| `4_Play_Cheat_UnlockAll_Vulkan.bat` | Mode Vulkan + `RECOMP_DEBUG=cheats` + `BO3_UNLOCK_ALL=1`. |
+| `Create_Shortcuts.bat` | *(Opsional)* Membuat 4 shortcut `.lnk` berlogo resmi `Takedawn.exe`. |
 
 ---
 
-## Cara Pakai
+## Kontrol In-Game & Tips Tambahan
 
-1. **Download rilis terbaru** dari halaman [Releases](https://github.com/syahrulazz01/takedawn-lowend-preset/releases) (atau ambil isi folder `pack/`).
-2. **Ekstrak** semua isi `pack/` langsung ke dalam folder **Takedawn v0.3.1** Anda (folder yang sama dengan `Takedawn.exe`).
-3. **Jalankan game** lewat file `.bat` (**jangan** klik langsung `Takedawn.exe`):
-   - Belum ada Vulkan 1.3 -> klik 2x **`1_Play_NoVulkan_Celeron.bat`**
-   - Sudah ada Vulkan 1.3 -> klik 2x **`2_Play_Vulkan_UltraLow.bat`**
-   - Mode Cheat Unlock All -> klik 2x **`3_Play_Cheat_UnlockAll_NoVulkan.bat`** atau **`4_Play_Cheat_UnlockAll_Vulkan.bat`**
-4. *(Opsional)* Klik 2x **`Create_Shortcuts.bat`** untuk membuat shortcut berlogo Burnout 3.
-
----
-
-## Tips Tambahan
-
-- **Menu Overlay In-Game:** Tekan `F1` di keyboard (atau `Back + Start` di stik) untuk membuka menu grafis, kontrol, dan cheat kapan saja.
-- **Atur Jumlah Thread CPU:** Secara default disetel `RECOMP_RASTER_THREADS=2` (cocok untuk Celeron 2-core). Jika CPU Anda 4-core namun tanpa Vulkan 1.3, klik kanan file `.bat` -> **Edit** lalu ubah menjadi `4`.
+- **Buka Menu Overlay Takedawn:** Tekan `F1` di keyboard (atau `Back + Start` di stik) untuk mengubah resolusi, kontrol, grafis, atau cheat kapan saja di dalam game.
+- **Atur Thread CPU (Mode Tanpa Vulkan):** Default-nya `RECOMP_RASTER_THREADS=2` (pas untuk Celeron 2-core). Jika CPU kamu 4-core tapi belum mendukung Vulkan 1.3, klik kanan file `.bat` -> **Edit** lalu ubah `2` menjadi `4`.
+- **Maksimalkan PC Kelas Tinggi (4K / Upscaler):** Tekan `F1` di dalam game untuk menaikkan *render scale* ke `4x` atau mengaktifkan SMAA / Texture Upscaling.
 
 ---
 

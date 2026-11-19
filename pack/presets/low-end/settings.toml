@@ -1,0 +1,29 @@
+# Burnout 3: Takedown (Takedawn v0.3.1) - LOW-END In-Game Settings
+# All post-processing & upscalers disabled; race_clock enabled to prevent slow-motion below 60 FPS.
+
+[graphics]
+render_scale = 1
+aa = "off"
+aniso = "off"
+bloom = 0
+motion_blur = 0
+sharpen = 0
+ui_scale = "off"
+texture_upscale = "off"
+film_upscale = "off"
+vehicle_detail = "original"
+scenery_detail = "original"
+softbody = false
+high_refresh = false
+crash_60fps = false
+split_60fps = false
+hdr = false
+dither = false
+
+[display]
+filter = "nearest"
+fullscreen = true
+ultrawide = "off"
+
+[game]
+race_clock = true

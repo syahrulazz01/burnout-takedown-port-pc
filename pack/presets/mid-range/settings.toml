@@ -1,0 +1,20 @@
+# Burnout 3: Takedown (Takedawn v0.3.1) - MID-RANGE In-Game Settings (Balanced 60 FPS)
+
+[graphics]
+render_scale = 2
+bloom = 1
+motion_blur = 0
+softbody = true
+high_refresh = false
+crash_60fps = true
+split_60fps = true
+hdr = false
+dither = true
+
+[display]
+filter = "linear"
+fullscreen = true
+ultrawide = "off"
+
+[game]
+race_clock = true

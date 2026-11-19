@@ -2,16 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0] - 2026-11-19
+
+### Added
+- Rebranded project to **Burnout Takedown PORT PC — All-in-One Preset, Launcher & Setup Guide**.
+- Added 3 complete hardware presets in `pack/presets/`:
+  - `low-end` (Intel Celeron / No Vulkan 1.3, 480p 1x, all effects OFF)
+  - `mid-range` (Balanced Vulkan 1.3, 2x HD, 60 FPS Crash/Split-Screen, Softbody & Bloom)
+  - `high-end` (Gaming PC Vulkan 1.3, 3x 1440p+, High Refresh Rate, Softbody, Bloom & Motion Blur)
+- Added interactive 1-click preset switcher `pack/0_Choose_Preset.bat`.
+- Added complete start-to-finish setup tutorial in both `README.md` (English) and `README.id.md` (Bahasa Indonesia).
+
 ## [1.0.0] - 2026-11-19
 
 ### Added
-- Ultra-Low `enhance.toml` preset (`480p`, `scale = 1`, `nearest`, `pacing = "sleep"`).
-- Ultra-Low `data/settings.toml` preset with all post-processing & upscalers disabled and `race_clock = true`.
-- 4 smart `.bat` launchers with auto-detection for both `Burnout 3 Takedown\default.xbe` and `data\Game\default.xbe`:
-  - `1_Play_NoVulkan_Celeron.bat` (CPU rasterizer + D3D11 present, no Vulkan 1.3 required)
-  - `2_Play_Vulkan_UltraLow.bat` (Vulkan 1.3 Ultra-Low)
-  - `3_Play_Cheat_UnlockAll_NoVulkan.bat` (No-Vulkan + Unlock All + Cheats)
-  - `4_Play_Cheat_UnlockAll_Vulkan.bat` (Vulkan Ultra-Low + Unlock All + Cheats)
-- `Create_Shortcuts.bat` helper to generate `.lnk` shortcuts with the `Takedawn.exe` icon.
-- `scripts/build_release.ps1` script to package `pack/` into a ready-to-upload GitHub Release `.zip`.
-- Bilingual documentation (`README.md` in English and `README.id.md` in Bahasa Indonesia).
+- Initial Ultra-Low `enhance.toml` & `data/settings.toml` preset for Intel Celeron / No Vulkan 1.3 laptops.
+- 4 smart `.bat` launchers with auto-detection for `Burnout 3 Takedown\default.xbe` and `data\Game\default.xbe`.
+- `Create_Shortcuts.bat` helper and `scripts/build_release.ps1` release packager.
+- Bilingual documentation (`README.md` and `README.id.md`).

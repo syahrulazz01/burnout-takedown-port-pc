@@ -1,0 +1,15 @@
+# Burnout 3: Takedown (Takedawn v0.3.1) - HIGH-END Preset (Gaming PC / Vulkan 1.3)
+# 3x internal resolution (1440p+), linear filter, high refresh rate ready.
+
+[render]
+scale = 3
+shader_cache = true
+
+[display]
+widescreen = true
+hdtv = "480p"
+
+[present]
+filter = "linear"
+aspect = "auto"
+fullscreen = true

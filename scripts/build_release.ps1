@@ -1,12 +1,12 @@
 param(
-    [string]$Version = "v1.0.0"
+    [string]$Version = "v1.1.0"
 )
 
 $ErrorActionPreference = "Stop"
 $RepoRoot = Split-Path -Parent $PSScriptRoot
 $PackDir = Join-Path $RepoRoot "pack"
 $DistDir = Join-Path $RepoRoot "dist"
-$ZipPath = Join-Path $DistDir "takedawn-lowend-preset-$Version.zip"
+$ZipPath = Join-Path $DistDir "burnout-takedown-port-pc-$Version.zip"
 
 if (-not (Test-Path $DistDir)) {
     New-Item -ItemType Directory -Path $DistDir | Out-Null
